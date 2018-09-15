@@ -29,6 +29,12 @@ Just add as a development requirement to your `composer.json`, and it should wor
 composer require --dev nickwilde1990/php-composter-phpcs-drupal
 ```
 
+**Note:** If you are using this with a Drupal module which is being run through the DrupalCI test bot, due to how that works/adds test dependencies, you will likely need to also run
+```BASH
+composer require --dev "squizlabs/php_codesniffer:2.9.x-dev@dev"
+```
+to force the required version of PHPCS since otherwise, the test bot is locked to the 2.8 branch.
+
 ## Basic Usage
 
 It should just work when you `git commit`.
